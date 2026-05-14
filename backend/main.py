@@ -31,6 +31,7 @@ app.add_middleware(
 )
 
 # Setup Gemini
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-1.5-flash")
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 # Setup Supabase REST credentials.
@@ -153,7 +154,7 @@ async def chat_endpoint(request: ChatRequest, background_tasks: BackgroundTasks,
     try:
         # Request from Gemini
         response = await client.aio.models.generate_content(
-            model='gemini-2.5-flash',
+            model=GEMINI_MODEL,
             contents=prompt,
             config=genai.types.GenerateContentConfig(
                 response_mime_type="application/json"
@@ -216,7 +217,7 @@ async def extract_document(request: ExtractRequest, user: dict = Depends(verify_
           f"File name: {request.file_name}\n"
       )
       response = await client.aio.models.generate_content(
-          model='gemini-2.5-flash',
+          model=GEMINI_MODEL,
           contents=[
               prompt,
               genai.types.Part.from_bytes(data=file_bytes, mime_type=request.mime_type)

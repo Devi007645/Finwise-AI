@@ -29,8 +29,8 @@ async def test_gemini():
         # In the new SDK, we use client.models.generate_content
         # For async, we simply await the call
         # Change this line in your test_gemini.py
-        response = await client.models.generate_content(
-            model="gemini-2.0-flash-001", # Sometimes a specific suffix is required
+        response = await client.aio.models.generate_content(
+            model='gemini-1.5-flash', 
             # OR try the newer version:
             # model="gemini-3-flash", 
             contents=prompt,
