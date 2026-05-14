@@ -1,0 +1,8 @@
+{
+  "reply": "No, mandatory GST registration for services in India applies when your annual turnover exceeds ₹**20 Lakhs**. As your earnings are 10 Lakhs, it is not currently required. However, you may opt for **voluntary registration** if you need to issue GST invoices or claim input tax credit.",
+  "follow_ups": [
+    "What are the benefits of voluntary GST registration?",
+    "When should I consider mandatory registration if my income increases?",
+    "Are there any specific compliance requirements for freelancers under GST?"
+  ]
+}
